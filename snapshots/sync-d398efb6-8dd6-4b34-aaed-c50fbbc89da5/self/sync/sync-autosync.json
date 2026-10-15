@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 2,
+  "channels": {
+    "git": {
+      "enabled": true,
+      "interval": "30m",
+      "startupMinIntervalMs": 300000,
+      "consecutiveFailures": 1,
+      "lastRunAt": "2026-10-15T13:29:50.961Z",
+      "lastRunStatus": "failed",
+      "lastRunMessage": "git pull 失败: fatal: unable to access '[REPO_URL]/': Failed to connect to github.com:443 after 21066 ms: Could not connect to server\n",
+      "lastRunHistoryId": "autosync-658af537-cf1b-4c46-be95-7e3e793b2613"
+    },
+    "webdav": {
+      "enabled": false,
+      "interval": "30m",
+      "startupMinIntervalMs": 300000,
+      "consecutiveFailures": 0
+    }
+  }
+}
