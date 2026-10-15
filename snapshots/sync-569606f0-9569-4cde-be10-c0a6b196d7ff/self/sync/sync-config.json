@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 3,
+  "transport": "git",
+  "git": {
+    "repoUrl": "https://github.com/AbelDuan/DSH"
+  }
+}
