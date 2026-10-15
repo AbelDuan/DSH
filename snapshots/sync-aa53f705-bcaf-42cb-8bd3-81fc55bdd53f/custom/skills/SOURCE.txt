@@ -1,0 +1,207 @@
+$DSH_HOME/skills/ 安装台账
+=========================
+位置说明：$DSH_HOME/skills/ 是 dsh-skill-filesystem 的 user-dsh skill 根，
+chokidar 热监听 —— 放进来即生效，无需改插件或 cordis 配置、无需重启 dsh。
+
+目录里的 LICENSE 与各 skill 正文均来自上游原文（除下表列出的本地改动）。
+
+
+[1] Super Powers — obra/superpowers
+------------------------------------
+来源    https://github.com/obra/superpowers
+版本    6.3.0（main 快照）      许可 MIT      安装 2026-09-18
+本包 4 个 skill（只装工程纪律那几个）：
+  test-driven-development/          SKILL.md + writing-good-tests.md
+  systematic-debugging/             SKILL.md + root-cause-tracing.md / defense-in-depth.md
+                                    / condition-based-waiting.md / -example.ts / find-polluter.sh
+  verification-before-completion/   SKILL.md
+  receiving-code-review/            SKILL.md
+未装（上游其余 10 个）：brainstorming, writing-plans, executing-plans,
+  subagent-driven-development, dispatching-parallel-agents, using-git-worktrees,
+  finishing-a-development-branch, requesting-code-review, writing-skills, using-superpowers
+本地改动（3 处）：
+  1. systematic-debugging/SKILL.md   `superpowers:test-driven-development` → `test-driven-development`
+  2. systematic-debugging/SKILL.md   `superpowers:verification-before-completion` → `verification-before-completion`
+  3. test-driven-development/writing-good-tests.md  删掉指向未安装 skill 的 `(superpowers:writing-skills)`
+  （上游用 `superpowers:<name>` 前缀引用兄弟 skill，dsh 里 skill 名就是裸名。）
+升级：https://codeload.github.com/obra/superpowers/tar.gz/refs/heads/main 覆盖 + 重放这 3 处。
+
+
+[2] Caveman — JuliusBrussee/caveman
+-----------------------------------
+来源    https://github.com/JuliusBrussee/caveman
+版本    2.7.0（main 快照）      许可 MIT + BSL（见上游 LICENSING.md）    安装 2026-09-19
+本包 5 个 skill：
+  caveman/            输出压缩模式，档位 lite/full/ultra + wenyan-*；默认 full，
+                      整个会话持续，直到说 "stop caveman" / "normal mode"
+  caveman-help/       档位速查卡（一次性，不改模式）
+  caveman-review/     压缩版 code review：一行一条 finding
+  caveman-commit/     Conventional Commits 压缩成只留意图
+  caveman-compress/   把自然语言文件压成 caveman 体（含 scripts/，见下方⚠️）
+  ... 上游 skills/ 下其余 caveman-* / cavecrew 未装
+本地改动（1 处，仅 compress）：
+  caveman-compress/scripts/compress.py —— 加了 DeepSeek 通路（见下）。
+  其余 4 个 skill 原文照搬。
+
+⚠️ caveman-compress 的 LLM 通路（本机改造，已实测）
+   上游 call_claude() 只认 Anthropic：优先 ANTHROPIC_API_KEY + anthropic 包，
+   否则回退 `claude` CLI。本机三者都没有 —— 所以在 compress.py 里**加了一条分支**
+   （函数 `_dsh_deepseek_key()` / `_call_deepseek()`，以及 call_claude() 开头的
+   DeepSeek 尝试），走本机已有的 DeepSeek key：
+     key 来源  环境变量 DEEPSEEK_API_KEY → 否则读 $DSH_HOME/.credentials.yaml 的 refs 段
+     端点      https://api.deepseek.com/chat/completions（与 dsh-llm-deepseek 一致）
+     模型      CAVEMAN_DEEPSEEK_MODEL，默认 deepseek-flash
+     输出上限  CAVEMAN_DEEPSEEK_MAX_TOKENS，默认 131072（上游 8192，见下方修正）
+     依赖      仅 stdlib urllib（系统 python3 没有 requests，且 pip 被 PEP 668 挡）
+   **分支是增量的**：设 CAVEMAN_PROVIDER=anthropic，或让 key 解析不到，
+   就完全走回上游原逻辑。要恢复上游，删掉那三段即可（都有 "LOCAL PATCH" 注释）。
+
+   本机模型事实（2026-09-19 实测，非推测）
+   --------------------------------------
+   · 本会话实际模型：provider=deepseek-official, model=deepseek-flash
+     （来源：$DSH_HOME/storages/session_projcache/sessions/<本会话>.json 的
+       record.rows.modelSelection.val.lastUsed）
+   · 上下文窗口：1,000,000 tokens
+     （来源：同一文件的 record.rows.contextPressure.val.contextWindow；
+       亦见 dsh-llm-deepseek 的 DEFAULT_CONTEXT_WINDOW = 1e6，
+       该插件 4 个目录模型 deepseek-flash / v4-flash / v4-pro / v4-flash-vision-exp
+       全部使用这个值）
+   · 本机单次输出上限：256,000 tokens（dsh-llm-deepseek DEFAULT_MAX_TOKENS）
+   · API 别名实况（实测回显）：请求 deepseek-chat 或 deepseek-v4-flash，
+     响应回显的都是 "deepseek-flash"；不存在的模型名直接 HTTP 400。
+     所以本机就是 deepseek-flash，写 deepseek-chat 只是被别名兜住，有误导性。
+
+   修正了一处会真出错的照抄（max_tokens）
+   --------------------------------------
+   上游给 Claude 用的是 max_tokens=8192。实测本机模型：
+     13 KB 输入 → completion_tokens 5,644
+     110 KB 输入 → completion_tokens 11,614
+   即 8192 在 ~20-30KB 输入处就会硬截断。已改为默认 131072（用
+   CAVEMAN_DEEPSEEK_MAX_TOKENS 覆盖），并在响应 finish_reason=="length" 时
+   直接报错，避免截断被伪装成"校验失败、重试两次后放弃"。
+
+   实测记录
+   --------
+   · 947 B  → 541 B，code block 原样保留，validation 一次通过，exit 0
+     原文备份 $XDG_DATA_HOME/caveman-compress/backups/cc-test/memory.original.md
+   · 13 KB  → 9.3 KB，3 个代码标记全存活
+   · 110 KB → **偶发失败**：一次报 "changed preserved code marker 5"（fail-closed，
+     文件未被触碰、没留备份），同参数再跑一次 6 个标记全存活。
+     → 这是本机模型在长输入上的**稳定性**问题，不是上下文不够（110KB 只用了
+     20,363 prompt tokens，离 100 万很远）。所以：500KB 的 MAX_FILE_SIZE 相对
+     100 万上下文是**偏保守**的，但它防不住这个偶发；大文件请预期可能重跑。
+   · 另外它是**原地覆盖**目标文件，只压 .md/.txt/.typ/.tex，不碰代码。
+
+
+[3] MarkItDown — raccioly/markitdown-skill
+-------------------------------------------
+来源    https://github.com/raccioly/markitdown-skill（branch: master）
+安装    2026-09-19
+  markitdown/SKILL.md     读 Office/结构化文档 → Markdown；明确不用它读 PDF/图片
+本地改动：**2026-09-28 改了 PDF 策略** —— 原文提示词/Frontmatter 里写「PDF 不要用它，走原生 Read」，
+用户要求 PDF 默认走 markitdown 省 token，故改了 description / When to use / When NOT to use，
+并加「Local policy on PDFs」一节。其余内容原样照搬。skill 名与目录名一致：markitdown。
+
+⚠️ 这个 skill 需要 `markitdown` 命令，本机已一并装好（skill 文档之外的部分）：
+    venv      /root/projects/.dsh/tools/markitdown-venv        （316 MB，Python 3.13）
+    包装脚本  /root/projects/.dsh/tools/markitdown
+    软链接    /usr/local/bin/markitdown -> 上述包装脚本
+    装的 extra：docx,pptx,xlsx,xls,pdf,outlook（跳过 azure-* / 音频转录 / youtube）
+    包装脚本的作用：过滤 proot 容器里 onnxruntime(cpuinfo) 每次调用喷的 ~10 行固定噪声，
+    真实报错与退出码原样透传（已验证 exit 0/1）。
+    为什么用 venv：系统 pip 被 PEP 668 挡住（externally-managed），且本机无 uv/pipx。
+    ⚠️ /usr/local/bin 属容器运行时（runtime-current/node），app 更新后软链接可能被清掉。
+    丢了就重建（venv 与包装脚本都在持久目录，不会丢）：
+      ln -sf /root/projects/.dsh/tools/markitdown /usr/local/bin/markitdown
+
+
+[恢复记录] 2026-09-20 从配置备份重建本目录与 markitdown
+-------------------------------------------------------
+本目录 32 个文件由 `dsh-config-2026-09-20-4a634e.zip` 的 custom/skills/ 还原，
+逐文件与包内 integrity/checksums.json 的 sha256 一致（零差异）。
+markitdown CLI 因备份不含 skill 文档之外的部分，按上面的布局重建，与原机的差异：
+  · venv 为 Python 3.12（原机 3.13），markitdown 0.1.7，311 MB；extras 同原机
+    （docx,pptx,xlsx,xls,pdf,outlook）。
+  · 本机无 ca-certificates、无 ensurepip、无 pip：先用 node 取 CA 束存到
+    /root/projects/.dsh/tools/cacert.pem（python 侧 SSL_CERT_FILE 指向它），
+    再用 get-pip.py 引导 pip 进 venv。重建脚本：
+    /root/projects/.dsh/tools/install-markitdown.sh（日志同名 .log）。
+  · proot 下 pip 安装的 console script 会把 shebang 写成 .../bin/pip（bad magic），
+    已批量改回 .../bin/python3——重建后必须重跑这一步。
+  · 包装脚本是按上面描述的行为重写的（非原文件拷贝）：过滤 onnxruntime/cpuinfo
+    噪声行，stdout/stderr 其余原样透传，退出码原样透传。
+  冒烟：md/xlsx/docx 转换 exit 0 且中文正常，缺文件 exit 1。
+
+
+[修复记录] 2026-09-20 恢复后审计：发现并修掉两个真缺陷
+-------------------------------------------------------
+审计方法：逐个交付物验**行为**，不靠"文件在就算装好"。结论：
+  · 10 个 skill 文件完整，SKILL.md 里引用的相对文件 10/10 全部存在；
+  · 两条注册链实测可加载 —— skill 工具实调 `ponytail`（插件层，来自
+    profiles/web/node_modules/dsh-ponytail-skills/）与 `systematic-debugging`
+    （用户层，来自 $DSH_HOME/skills/）均成功，base directory 解析正确；
+  · chat-manager / config-manager / dshmarket / web-mobile 均在 node_modules 且已进 bundles；
+  · adb 插件可用（adb_control status 正常返回）；
+  · 注：组合配置里 `skill-filesystem` 与 `tool-skill` 显示 disabled 是**正常的** ——
+    dsh-web-app 的注释写明这两项改由 agent preset 挂载（preset 才是本地发现的归属），
+    注册表 `skill` 仍在宿主面。
+
+缺陷 1：markitdown 包装脚本静默吞掉正文（已修）
+  /root/projects/.dsh/tools/markitdown
+  旧版把 NOISE 正则同时作用在 **stdout 和 stderr** 上，而 NOISE 含
+  `onnxruntime|cpuinfo|Unable to load|WARNING: Since` 这类宽泛词 —— 正文里出现
+  这些词时整行被删，**退出码仍是 0**。实测：一份整篇讲 onnxruntime 的 md，
+  转换输出为空白。
+  修法：过滤器只作用于 stderr（stdout 是转换结果，不再重定向、原样直通），
+  并把匹配收窄成日志行形状 `\[[A-Z]:onnxruntime:` / `^Error in cpuinfo:` /
+  `^onnxruntime (cpuid_info )?warning:`。
+  回归：正文含 onnxruntime/cpuinfo 完整保留；噪声仍被过滤（stderr 残留 0 行）；
+  真实 traceback 与退出码 0/1 原样透传。
+
+缺陷 2：系统 Python 没有 CA 路径，caveman-compress 直接 SSL 失败（已修）
+  现象：`python3 -m scripts <file>` → [SSL: CERTIFICATE_VERIFY_FAILED]
+        self-signed certificate in certificate chain
+  根因：**/usr/lib/ssl 目录根本不存在**，而那正是 Python 默认的
+        openssl_cafile(/usr/lib/ssl/cert.pem) 与 capath(/usr/lib/ssl/certs)。
+        /etc/ssl/certs/ca-certificates.crt 虽然被放回来了，但 Python 默认不看那里。
+        （markitdown 的 venv 能联网是因为它自带 certifi，与系统无关 —— 所以
+          "markitdown 能通"并不能推出"系统 Python 能通"，这点容易误判。）
+  修法：mkdir -p /usr/lib/ssl &&
+        ln -sf /root/projects/.dsh/tools/cacert.pem /usr/lib/ssl/cert.pem
+        特意指向**持久目录**里的 CA 束而非 /etc，这样 /etc 被换掉也不受影响。
+  ⚠️ /usr/lib/ssl 本身仍在容器 rootfs（/usr）里，app 更新后可能消失；
+     消失后上面两行即可重建（写入 app 更新后的自检清单）。
+  验证：系统 python urllib 请求 https://api.deepseek.com 返回 401
+        （= TLS 握手已成功，只是没带鉴权）；
+        compress 端到端 244 B → 126 B，validation 一次通过，exit 0，
+        原文备份已落到 $XDG_DATA_HOME/caveman-compress/backups/。
+
+环境观察（本次未处理，仅记录）
+  · 容器里 `curl` 和 `wget` **都没有了**（rootfs 重建后未装）。本目录所有交付物
+    都不依赖它们（markitdown 走 venv 的 requests，compress 走 stdlib urllib），
+    但排查网络问题时很容易把"命令不存在"误判成"网络不通" —— 本次就误判过一次，
+    教训：先读错误原文，别猜。
+  · WorkBuddy（@axiaohungry/dsh-llm-workbuddy，npm 上有 1.3.18）用户明确表示
+    **不需要**，不装。
+
+
+[重建记录] 2026-09-28 markitdown CLI 再次丢失后重建
+---------------------------------------------------
+背景：/root/projects/.dsh/tools/ 整个目录与 /usr/local/bin/markitdown 软链接都没了
+（时间上与 2026-09-26 15:38 那次 /usr/local/bin 重建吻合），skill 文档本身还在。
+本次重建：脚本 /root/projects/.dsh/tools/install-markitdown.sh（日志同名 .log）。
+  · 系统仍无 pip/ensurepip，且 apt/dpkg 长期半损坏（openjdk-17 等 unpacked-not-configured）；
+    `apt-get install python3-venv` 会卡在 /etc/python3.12/sitecustomize.py 的 conffile 交互提示
+    上（该文件是本机改过的，**别**为了装 venv 去 force-confold 重配系统 python）。
+    → 照 09-20 的老路：`python3 -m venv --without-pip` + get-pip.py 引导。
+  · **pypi.org 直连已不稳**（`SSL: UNEXPECTED_EOF_WHILE_READING`，同一 URL 前一次还 200）。
+    pip 改走清华源：`PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple`（实测 0.45s）。
+  · 结果 markitdown 0.1.8，venv 311 MB，extras 同原机（docx,pptx,xlsx,xls,pdf,outlook）；
+    pip 26.2.1 生成的 console script shebang 本次正确（.../bin/python3），无需批量修。
+  · 包装脚本按「缺陷 1」修好的形态重写（只过滤 stderr、正则窄）。实测噪声只有 3 行
+    `[W:onnxruntime:Default,...]`（telemetry + GPU/NPU device discovery），**无 cpuinfo 行**。
+    验证：正文含 onnxruntime/cpuinfo 字样完整保留；正常转换 stderr 0 行；缺文件 exit 1 且
+    traceback 完整；连调 3 次 0 噪声；csv/xlsx 中文转换 exit 0；mammoth/pptx/openpyxl/xlrd/
+    pdfminer/pdfplumber/olefile/magika 逐个 import 通过（未单独测 docx 实文件）。
+  · CA **不用重建**：/usr/lib/ssl/cert.pem → /etc/ssl/certs/ca-certificates.crt 现由 rootfs 自带，
+    系统 python TLS 实测可达（200），故未再放 cacert.pem。
