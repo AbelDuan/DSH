@@ -1,0 +1,36 @@
+{
+  "id": "sync-6b14e1d0-d739-4329-9fe7-3cacde08026c",
+  "createdAt": "2026-10-15T04:18:17.209Z",
+  "manifest": {
+    "schemaVersion": 1,
+    "dshVersion": "0.2.0-rc.2",
+    "platform": "win32",
+    "sectionIds": [
+      "settings",
+      "ui",
+      "providers",
+      "plugins",
+      "prompts",
+      "skills",
+      "agentPresets",
+      "agentInstructions",
+      "self",
+      "sessions"
+    ],
+    "containsSecrets": false,
+    "transport": "git",
+    "sourceHome": "C:\\Users\\Abel\\.dsh"
+  },
+  "sectionHashes": {
+    "settings": "f9acc37252e7f58dbeda1ee3378ddbbeadf9a3d97176f36515b49c39d3f8fc3d",
+    "ui": "80978e7be56d94ff304f33196edab63d0a88159963ec4e66165754366dafa856",
+    "providers": "39bbd7ff41391516d59834ca433e0b14b64a60a939825f603b9353efde86f877",
+    "plugins": "cdf580f0479fa3d68d80017b20961dd22327d1bc8fb0bb440dbc0930024b42fc",
+    "prompts": "23d05fd89e9e61985416d8fb3dfc30e5aae4298aa4f684f2a0391b49d70e8cfd",
+    "skills": "b1644e500d03c4f458dc7eb88aa91fe901f147ff9f158c9dd8770682460a7ff9",
+    "agentPresets": "6b0dd5c3b33a6166f4152d6b3461a0d4b18c59981dc518fe7880da7b8a3da780",
+    "agentInstructions": "1d1b460525e3d0aafb248295b78db56ab000ce307e7dfe41b21cf61f2f38c12b",
+    "self": "9313086cff978f9b573070068ce055e4e838946c8ab728b171edfea77b690cbd",
+    "sessions": "b587e3c65a28765dc53de94a062b566da0d8e8c8be2160f9a78416815ddccf4f"
+  }
+}

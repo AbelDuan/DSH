@@ -1,0 +1,330 @@
+{
+  "version": 1,
+  "blobRefs": [
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/0f7c503c-6b3f-4bd9-a17c-dd55883046f4/session.v4.jsonl.zstd",
+      "blobHash": "d41caf104cbbca86dbc2bf896a76af56dd33a8e7a2526c41fed7df0d6f902c93",
+      "sizeBytes": 4849314
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/3a47fd2e-89b1-49f2-9f70-8531037e1870/session.v4.jsonl.zstd",
+      "blobHash": "8d81217ed25714d261f6fba0a503737ca19c3ce02d4a0f81edabd4248d880a4e",
+      "sizeBytes": 165293
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/40c998f1-27cb-428b-87f4-35c7f304d229/session.v4.jsonl.zstd",
+      "blobHash": "7ffa503174f58d8b8be61bb1c256ac08b4fa8e02645e0e9a576bc70b1fcc31a1",
+      "sizeBytes": 211591
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/4e41884d-8275-4880-b4f1-8ef7db6bddc2/session.v4.jsonl.zstd",
+      "blobHash": "3f32a32a048e7ebcbce5daf300bf3e729ca1f7df29031b6ba623156183014508",
+      "sizeBytes": 111159
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/562cb970-f999-4669-a5a8-148cfdef8e87/session.v4.jsonl.zstd",
+      "blobHash": "b854bc6c5da248185d4134ec16b401c13639a19df9ae0c51d547c456f5faab96",
+      "sizeBytes": 980060
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/68dade4f-3215-404b-9937-6a045b354c65/session.v4.jsonl.zstd",
+      "blobHash": "a0d1f387214b714163e8b98f7e525d85f0e6a8d12719a999ba4468792e48fe40",
+      "sizeBytes": 4411343
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/93cfc935-a4a9-4195-b4aa-22d3cacd14cc/session.v4.jsonl.zstd",
+      "blobHash": "c2dad6e82ed49ba4a76e591c4c5dabee05b3b8fc020b6f09cdae72cc80f7ea38",
+      "sizeBytes": 170409
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/aed87f78-7ff8-47be-b250-788809772eb7/session.v4.jsonl.zstd",
+      "blobHash": "670028bbffa41dedf659c307dd9666745c7f85df01e57d2a5d7f006e2407071d",
+      "sizeBytes": 4845571
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/bf46ef17-c2a9-4679-a5fe-7445e7a3de6f/session.v4.jsonl.zstd",
+      "blobHash": "4502dfa3569410eb320fbdad0ede9a952025a48339c7d8a567ec8100e755edfa",
+      "sizeBytes": 4477785
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/ce117d19-758e-4a3a-9f75-39a3174ab4c4/session.v4.jsonl.zstd",
+      "blobHash": "0704231b9ca5a63d06e3f7c4adff41361bffb24dde278dab24dc98647ac822f9",
+      "sizeBytes": 417120
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-0d17118d-3aeb-4e66-b08a-a20cbcb96909/session.v4.jsonl.zstd",
+      "blobHash": "8a73b5a5c1a64a80157d7f94a844b381e86b9cf31ec7b437ccf65137f435ba89",
+      "sizeBytes": 973471
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-1187fbdd-10da-46dd-a164-c41de052968e/session.v4.jsonl.zstd",
+      "blobHash": "c486ebf34bd5590a98219f8fa17d8448498a7952ce1ad8b6de52f84a3d12d3dc",
+      "sizeBytes": 894407
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-2c3d8f91-0bc2-4732-9611-77ea5415dd5d/session.v4.jsonl.zstd",
+      "blobHash": "cae663fa771abd23fad8dca640097d4c4f4b03f377442e6b0c2edf6e9e23d424",
+      "sizeBytes": 7989809
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-31bb77ee-0315-4fe1-ba41-58d3994f6b3f/session.v4.jsonl.zstd",
+      "blobHash": "d6ce7493b81869cc676b4813c8f725387790dc0f156f7b9729f1c7275fc9cac1",
+      "sizeBytes": 417450
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-341bac3d-e669-42ac-adaa-20d82135f78f/session.v4.jsonl.zstd",
+      "blobHash": "3deb3b002ea99fb835bbe764a8f90247e27b0ba3c8a311ccf5c35a5ac43496ac",
+      "sizeBytes": 55093
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-364e6117-abf6-45cf-b1ed-cf5894972829/session.v4.jsonl.zstd",
+      "blobHash": "cc52eff18a171eb775efc7573894953187f29bb38acaa02886d960b4bbe2d4b7",
+      "sizeBytes": 205576
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-42b44959-cf85-4c7a-a4f0-17bb2bc166ac/session.v4.jsonl.zstd",
+      "blobHash": "2f470e40ee1c570e8d9289997e6cd77a0656a6ef0a64edf9806e82824d944bb2",
+      "sizeBytes": 1537543
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-4bcc3a39-3d53-496d-a43d-31f45a0f49da/session.v4.jsonl.zstd",
+      "blobHash": "2ce0df27cea907d4886b140802a4971e4416d136cdcd62e4464aa5d5009f6981",
+      "sizeBytes": 372688
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-5d98d938-8299-42b1-b17c-4bedad7e6d1e/session.v4.jsonl.zstd",
+      "blobHash": "5a5bcc4a76651419c0f5015153cc8b5e8321626312ba34481bfa0869b8cb5882",
+      "sizeBytes": 324820
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-6062f2f7-b5a2-4c89-a8c0-41c9cfb5eff1/session.v4.jsonl.zstd",
+      "blobHash": "1d58e66bf85d75c45f3af38759b67009ea17114aba047efe950630e897650944",
+      "sizeBytes": 68629
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-62630b92-2d2e-413c-9067-2e0b434e8b1f/session.v4.jsonl.zstd",
+      "blobHash": "7633fcd46c8a881bf8f5fc0a4111a9de9c9de81fa8e64d1fe41f5e527ab5ad87",
+      "sizeBytes": 415403
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-685a1ccf-39b7-4714-81a8-5df7477215e4/session.v4.jsonl.zstd",
+      "blobHash": "6382b80842031408fde955dfeae838c34d6cb7b9958ee242f25cdcfe6aea35ce",
+      "sizeBytes": 1204218
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-715e2507-8987-43e4-af9a-cf47319d0e40/session.v4.jsonl.zstd",
+      "blobHash": "253ab66c1c79ba979c8cc62b54ca0f75c232a1d3515c131143a1ed8bda9a10d9",
+      "sizeBytes": 239813
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-7523eea6-c41d-4d48-a190-1f6cfae8d432/session.v4.jsonl.zstd",
+      "blobHash": "cdfd2712c6ea8f7bfae62eb7a6a5028285643c4f532e189e9fb1985c4c23b510",
+      "sizeBytes": 584211
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-75e445f0-e9b0-4ffc-a607-35ebc7e3fcb6/session.v4.jsonl.zstd",
+      "blobHash": "7db233fbd89346826649b8acf9824a2003ae37444ffdb8f3c94704ddf46ceb3f",
+      "sizeBytes": 121815
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-7dbcc9a8-3401-46d4-8406-61feb692f0e0/session.v4.jsonl.zstd",
+      "blobHash": "89fccdba497cfd5924e9ff530128f94ee7499df01e9c49cc6518f3fc45bf8071",
+      "sizeBytes": 1017020
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-7f87f83b-6ba6-4039-971d-7121939d5e08/session.v4.jsonl.zstd",
+      "blobHash": "3c1658b657d6205c72bd09710de66e3fc8ac0ffd380457330780b84da1325e6a",
+      "sizeBytes": 1103334
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-813ee34f-2d0f-43f5-97f2-787eec381a16/session.v4.jsonl.zstd",
+      "blobHash": "16616705881a389b02e6c549526e5e43937d1e6ae359b016ddec368270a83258",
+      "sizeBytes": 2619963
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-8350c319-460d-4a9b-9df9-d62697b1996a/session.v4.jsonl.zstd",
+      "blobHash": "c0a45e60ede60bd0178acc22c802478c8b8109e3255719247390ba54515708bb",
+      "sizeBytes": 10330145
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-88b8f2fe-341f-41cd-95c9-b0a9db230159/session.v4.jsonl.zstd",
+      "blobHash": "0b552fdfa23838500e94fada612cbaeb7d7b2aadc4f138af62118651fdf17f9a",
+      "sizeBytes": 541978
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-8e738366-6868-47b9-813f-cd0e3d12e201/session.v4.jsonl.zstd",
+      "blobHash": "e5a0cc2b7e3d96e367ec6ac43670a85ee49361621a79ac9c90518c31436865a9",
+      "sizeBytes": 2216218
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-9200d73b-ab9c-4d8f-bc68-f0087fcef634/session.v4.jsonl.zstd",
+      "blobHash": "8b770f4b05fb2158c0133b9aa7ff4d607974df5bb965a8ecec16b7853c2f3675",
+      "sizeBytes": 152214
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-97511052-3179-4fc8-b841-94a559c2840a/session.v4.jsonl.zstd",
+      "blobHash": "5355e4ebf353bf8f40fff20dcb51d159b61bbd1d203a906f394f96e41d46c603",
+      "sizeBytes": 339851
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-9ce8d936-6e00-4bbd-874b-74ca8f91ba46/session.v4.jsonl.zstd",
+      "blobHash": "367643c3ad4826159fdf9b8cc9f938a587ff8a0485c3dcaffd87d82a5e7fe346",
+      "sizeBytes": 4811922
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-bfebaeb7-ea7b-415d-81d2-3f777d37253f/session.v4.jsonl.zstd",
+      "blobHash": "fbb31fed83c17023c6469284f80c1196b04d3d35fbb5462d751c1dbc88943bb3",
+      "sizeBytes": 143164
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-c397be42-8b8c-4448-84b4-8a209e87760f/session.v4.jsonl.zstd",
+      "blobHash": "2f7fa64ef4ec2df8641567d9eb3f9776f176e0cc9aa6e4a8db1a36aa7c54f0ab",
+      "sizeBytes": 1101469
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-c7525d31-b96d-4c3e-88a6-485469d7a444/session.v4.jsonl.zstd",
+      "blobHash": "3e8428af8738345567e96f77ffe8e81de3fcef055c3ff800698145b2deef96c5",
+      "sizeBytes": 1555256
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-c8366583-bc37-4da8-91d6-c9e614fafee0/session.v4.jsonl.zstd",
+      "blobHash": "0ca3e2cee8b0912fe5e712d0a400dc0e5f14df37e015ee3f80a53bc866b73c4b",
+      "sizeBytes": 1097829
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-cdb016ed-d12a-4697-bea2-1f6f4caf7564/session.v4.jsonl.zstd",
+      "blobHash": "96974832d68d81f0a7f23a63c6ba3034ff24a9fcf8e3a998944e3c4453a15e26",
+      "sizeBytes": 2745282
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-d248387f-a4a0-4015-b745-b23edb309096/session.v4.jsonl.zstd",
+      "blobHash": "5ce70360f6b6f473c506f5fd9ed861b705ec53374c1e5e6af00ac55eb8a4b533",
+      "sizeBytes": 5395740
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-d307880f-669e-454f-b026-425e6bff894e/session.v4.jsonl.zstd",
+      "blobHash": "026522093064a0e442859e8ff5881ba2584023b9adf2f73e2a777f86bdbbe98d",
+      "sizeBytes": 5867578
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-db1e5735-8dbe-47b3-bc98-a30c6792d2f1/session.v4.jsonl.zstd",
+      "blobHash": "f09ce39c06dea8fdffc0a434bfc331e09922aa3b7875cd99620e9ad5fafd7496",
+      "sizeBytes": 6447610
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-db31993a-91ea-46cf-a261-e82ddc2bdcc7/session.v4.jsonl.zstd",
+      "blobHash": "aaba4216c87fd9ef75404661bd417a7f43b3b9ae88928a3aa8bb415260e48a47",
+      "sizeBytes": 1237095
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-e5c0af5a-8816-47ac-8146-dd2838f28ea1/session.v4.jsonl.zstd",
+      "blobHash": "634d80f2fc7caae9ff0e325a6bb96b261907ac52e15331aae6920905f261191c",
+      "sizeBytes": 1648147
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-e6ad8f49-77d6-49ea-9b3a-e19f28b85b7c/session.v4.jsonl.zstd",
+      "blobHash": "49ebfcbe298474658a77e522657801fd93b4ffc1e44e002ca43e231a0257aa3e",
+      "sizeBytes": 244928
+    },
+    {
+      "relativePath": "--C-Users-Abel-Documents-deepseek-harness-default-workspace--/session-ed58d63f-3f79-4017-970d-8827996c17c5/session.v4.jsonl.zstd",
+      "blobHash": "424eb7efa545f41c1d44173cda05ff41f5360af41bd5e1b1f42548a2f26ffd2d",
+      "sizeBytes": 123250
+    },
+    {
+      "relativePath": "--root-projects--/session-3b05d3e1-f317-4d8e-8054-6f28ec41f2cc/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-projects--/session-3b05d3e1-f317-4d8e-8054-6f28ec41f2cc/session.v4.jsonl.zstd",
+      "blobHash": "b1f3297ccecfdb73df9395f583c44e99679faf0a51f9e97fad0f9f21e7031507",
+      "sizeBytes": 3161842
+    },
+    {
+      "relativePath": "--root-projects--/session-62f36878-2dcc-48a9-ad06-aa0c9205aff2/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-projects--/session-62f36878-2dcc-48a9-ad06-aa0c9205aff2/session.v4.jsonl.zstd",
+      "blobHash": "2789952ec922ba0a70103b852b76e990a380c4d8e018531ac649af91157d42ba",
+      "sizeBytes": 3695715
+    },
+    {
+      "relativePath": "--root-projects--/session-a5541950-cf17-4cb0-8827-9dbf40661639/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-projects--/session-a5541950-cf17-4cb0-8827-9dbf40661639/session.v4.jsonl.zstd",
+      "blobHash": "71bddd3a002f3d957709a2b5712581e24f226da1a8242c15da0ccb5548843eac",
+      "sizeBytes": 401
+    },
+    {
+      "relativePath": "--root-projects--/session-b1752979-d247-4fc8-ba5c-fc8925d6fa27/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-projects--/session-b1752979-d247-4fc8-ba5c-fc8925d6fa27/session.v4.jsonl.zstd",
+      "blobHash": "0bc78362eb64d91923f522481e4b12e464df69d1cbec9dd90af02a9039164064",
+      "sizeBytes": 201077
+    },
+    {
+      "relativePath": "--root-workspace--/session-4ebdcd51-b353-4b17-af1e-980966e228e3/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-workspace--/session-4ebdcd51-b353-4b17-af1e-980966e228e3/session.v4.jsonl.zstd",
+      "blobHash": "c769e36432560f9854cdce106e5fd4490db7048ae11f14968ffc80f2b142b7b7",
+      "sizeBytes": 377953
+    },
+    {
+      "relativePath": "--root-workspace--/session-85ebc74b-52fa-4678-badd-5536ebeec862/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-workspace--/session-85ebc74b-52fa-4678-badd-5536ebeec862/session.v4.jsonl.zstd",
+      "blobHash": "42b4d15b815cc0b004b0d26f592b05fbfa87e82a6cbe637db0583a51b82e114d",
+      "sizeBytes": 1615986
+    },
+    {
+      "relativePath": "--root-workspace--/session-9e5f867d-ada7-4acd-9f95-f3e5e969633b/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-workspace--/session-9e5f867d-ada7-4acd-9f95-f3e5e969633b/session.v4.jsonl.zstd",
+      "blobHash": "02d68ef53e71387cf0f064fd68bf3d718135a2fcfd4f78ee556b6ea691228866",
+      "sizeBytes": 2901861
+    },
+    {
+      "relativePath": "--root-workspace--/session-ac43b24e-943f-498a-a41a-0cdf6e96e282/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-workspace--/session-ac43b24e-943f-498a-a41a-0cdf6e96e282/session.v4.jsonl.zstd",
+      "blobHash": "b8f31d83e6f3d43d27a45fe66e9117d7493f779a8fb1fe64923e37bfde3f7ea3",
+      "sizeBytes": 595490
+    },
+    {
+      "relativePath": "--root-workspace--/session-b9a9eb13-67ec-465e-adcb-cea8802fedb9/session.lock",
+      "blobHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0
+    },
+    {
+      "relativePath": "--root-workspace--/session-b9a9eb13-67ec-465e-adcb-cea8802fedb9/session.v3.jsonl.zstd",
+      "blobHash": "ca6bb944d6a4f4abdcedb33f49a5f17f8440a9e99ff6d2167854b670a05515e5",
+      "sizeBytes": 1160495
+    },
+    {
+      "relativePath": "--root-workspace--/session-b9a9eb13-67ec-465e-adcb-cea8802fedb9/session.v4.jsonl.zstd",
+      "blobHash": "9e061269afdc4175b519879cbe5529ee10259462e659caa985318b1ef756a867",
+      "sizeBytes": 6986195
+    }
+  ]
+}
