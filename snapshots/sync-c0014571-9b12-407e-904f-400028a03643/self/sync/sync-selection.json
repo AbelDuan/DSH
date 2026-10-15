@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "channels": {
+    "git": {
+      "mode": "advanced",
+      "sections": [
+        "settings",
+        "ui",
+        "providers",
+        "plugins",
+        "prompts",
+        "skills",
+        "agentPresets",
+        "agentInstructions",
+        "self",
+        "sessions"
+      ],
+      "sessionsLimit": 55,
+      "sessionsInclude": [],
+      "encrypt": false,
+      "includeSecrets": false
+    },
+    "webdav": {
+      "mode": "default",
+      "sections": [],
+      "sessionsLimit": 5,
+      "sessionsInclude": [],
+      "encrypt": false,
+      "includeSecrets": false
+    }
+  }
+}
