@@ -1,0 +1,22 @@
+{
+  "name": "dsh-mobile-tweaks",
+  "version": "1.0.0",
+  "description": "手机端 DSH 合并插件：侧边栏调整（小鲸鱼置底 / 竖屏收侧边栏 / 状态栏避让）+ 输入法提交与焦点守卫",
+  "license": "MIT",
+  "keywords": ["dsh", "dsh-plugin", "ui", "ime", "deepseek"],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": { "default": "./lib/index.js" },
+    "./client": { "default": "./lib/client.js" },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib", "cordis.patch.yml", "README.md"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "inject": [] }
+  },
+  "peerDependencies": { "@deepseek-ai/cordis": "^4.0.1" },
+  "engines": { "node": ">=20.0.0" }
+}
